@@ -5,6 +5,10 @@
  */
 package project_hibernate;
 
+import dao.SinhVienDAO;
+import java.util.List;
+import pojo.SinhVien;
+
 /**
  *
  * @author HP
@@ -16,6 +20,12 @@ public class Project_Hibernate {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        List<SinhVien> ds=SinhVienDAO.layDanhSachSinhVien();
+        for(int i=0; i<ds.size(); i++){
+        SinhVien sv=ds.get(i);
+        System.out.println("MSSV: "+sv.getMaSinhVien());
+        System.out.println("Họ và tên: "+sv.getHoTen());
+        }
     }
     
 }
