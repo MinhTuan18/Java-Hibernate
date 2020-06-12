@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2020 11:24:49 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Bangdiem" table="bangdiem" catalog="qlsv" optimistic-lock="version">
+        <composite-id name="id" class="pojo.BangdiemId">
+            <key-property name="masv" type="string">
+                <column name="Masv" length="10" />
+            </key-property>
+            <key-property name="malop" type="string">
+                <column name="Malop" length="10" />
+            </key-property>
+            <key-property name="mamon" type="string">
+                <column name="Mamon" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="giuaki" type="java.lang.Double">
+            <column name="Giuaki" precision="22" scale="0" />
+        </property>
+        <property name="cuoiki" type="java.lang.Double">
+            <column name="Cuoiki" precision="22" scale="0" />
+        </property>
+        <property name="khac" type="java.lang.Double">
+            <column name="Khac" precision="22" scale="0" />
+        </property>
+        <property name="diemtong" type="java.lang.Double">
+            <column name="Diemtong" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

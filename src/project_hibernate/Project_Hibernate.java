@@ -5,9 +5,9 @@
  */
 package project_hibernate;
 
-import dao.SinhVienDAO;
+import dao.*;
 import java.util.List;
-import pojo.SinhVien;
+import pojo.*;
 
 /**
  *
@@ -20,11 +20,15 @@ public class Project_Hibernate {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        List<SinhVien> ds=SinhVienDAO.layDanhSachSinhVien();
-        for(int i=0; i<ds.size(); i++){
-        SinhVien sv=ds.get(i);
-        System.out.println("MSSV: "+sv.getMaSinhVien());
-        System.out.println("Họ và tên: "+sv.getHoTen());
+        Account a= new Account();
+        a.setUsername("1712870");
+        a.setPassword("12345");
+        a.setType("0");
+        boolean kq = AccountDAO.themAccount(a);
+        if (kq == true) {
+            System.out.println("Thêm thành công");
+        } else {
+            System.out.println("Thêm thất bại");
         }
     }
     

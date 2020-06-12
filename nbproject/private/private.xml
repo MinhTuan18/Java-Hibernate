@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/SinhVien.hbm.xml</file>
-            <file>file:/E:/III/Java/Project_Hibernate/src/dao/SinhVienDAO.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/dao/SinhvienDAO.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/dao/AccountDAO.java</file>
             <file>file:/E:/III/Java/Project_Hibernate/src/project_hibernate/Project_Hibernate.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/Account.java</file>
             <file>file:/E:/III/Java/Project_Hibernate/src/hibernate.cfg.xml</file>
-            <file>file:/E:/III/Java/Project_Hibernate/src/util/NewHibernateUtil.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2020 11:24:49 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Monhoc" table="monhoc" catalog="qlsv" optimistic-lock="version">
+        <id name="mamon" type="string">
+            <column name="Mamon" length="10" />
+            <generator class="assigned" />
+        </id>
+        <property name="tenmon" type="string">
+            <column name="Tenmon" length="30" />
+        </property>
+        <property name="phong" type="string">
+            <column name="Phong" length="5" />
+        </property>
+        <property name="malop" type="string">
+            <column name="Malop" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

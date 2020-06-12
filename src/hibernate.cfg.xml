@@ -4,8 +4,13 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/qlsv?autoReconnect&amp;useUnicode=true&amp;characterEncoding=UTF-8</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/qlsv?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <mapping resource="pojo/SinhVien.hbm.xml"/>
+    <mapping resource="pojo/Bangdiem.hbm.xml"/>
+    <mapping resource="pojo/Account.hbm.xml"/>
+    <mapping resource="pojo/Monhoc.hbm.xml"/>
+    <mapping resource="pojo/Sinhvien.hbm.xml"/>
+    <mapping resource="pojo/Danhsachlop.hbm.xml"/>
+    <mapping resource="pojo/Lop.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
