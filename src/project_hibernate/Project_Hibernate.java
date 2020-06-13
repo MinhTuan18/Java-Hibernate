@@ -20,16 +20,9 @@ public class Project_Hibernate {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Account a= new Account();
-        a.setUsername("1712870");
-        a.setPassword("12345");
-        a.setType("0");
-        boolean kq = AccountDAO.themAccount(a);
-        if (kq == true) {
-            System.out.println("Thêm thành công");
-        } else {
-            System.out.println("Thêm thất bại");
+        Lop lop = LopDAO.layThongTinLop("17CTT7");
+        if (lop != null) {
+            System.out.println(lop.getMalop());
         }
-    }
-    
+    } 
 }

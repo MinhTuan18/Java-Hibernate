@@ -47,4 +47,34 @@ public class AccountDAO {
         }
         return true;
     }
+    
+    public static boolean doiMatKhau(Account account) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        if (AccountDAO.layThongTinAccount(account.getUsername()) == null) {
+            return false;
+        }
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.update(account);
+            transaction.commit();
+        } catch (HibernateException ex) {
+            transaction.rollback();
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return true;
+    }
+    
+    public static boolean checkLogin(String username, String password) {
+        Account account = AccountDAO.layThongTinAccount(username);
+        if (account == null) {
+            return false;
+        }
+        if (!password.equals(account.getPassword())) {
+            return false;
+        }
+        return true;
+    }
 }

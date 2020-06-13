@@ -34,7 +34,7 @@ public class SinhvienDAO {
     return ds;
     }
     
-    public static Sinhvien layThongTinhSinhVien(String maSinhVien) {
+    public static Sinhvien layThongTinSinhVien(String maSinhVien) {
         Sinhvien sv = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -50,7 +50,7 @@ public class SinhvienDAO {
     
     public static boolean themSinhVien(Sinhvien sv) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        if (SinhvienDAO.layThongTinhSinhVien(sv.getMasv()) !=null) {
+        if (SinhvienDAO.layThongTinSinhVien(sv.getMasv()) !=null) {
             return false;
         }
         Transaction transaction = null;
@@ -70,7 +70,7 @@ public class SinhvienDAO {
     
     public static boolean capNhatThongTinSinhVien(Sinhvien sv) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        if (SinhvienDAO.layThongTinhSinhVien(sv.getMasv()) == null) {
+        if (SinhvienDAO.layThongTinSinhVien(sv.getMasv()) == null) {
             return false;
         }
         Transaction transaction = null;
@@ -90,7 +90,7 @@ public class SinhvienDAO {
     
     public static boolean xoaSinhVien(String maSinhVien) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Sinhvien sv = SinhvienDAO.layThongTinhSinhVien(maSinhVien);
+        Sinhvien sv = SinhvienDAO.layThongTinSinhVien(maSinhVien);
         if(sv==null){
         return false;
         }
