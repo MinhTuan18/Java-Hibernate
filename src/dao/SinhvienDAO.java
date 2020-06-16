@@ -50,7 +50,7 @@ public class SinhvienDAO {
     
     public static boolean themSinhVien(Sinhvien sv) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        if (SinhvienDAO.layThongTinSinhVien(sv.getMasv()) !=null) {
+        if (SinhvienDAO.layThongTinSinhVien(sv.getMasv()) != null) {
             return false;
         }
         Transaction transaction = null;

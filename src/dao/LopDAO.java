@@ -9,6 +9,7 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import pojo.Lop;
 import util.HibernateUtil;
 
@@ -46,5 +47,22 @@ public class LopDAO {
         return lop;
     }
     
-    
+    public static boolean themLop(Lop lop) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        if (LopDAO.layThongTinLop(lop.getMalop()) != null) {
+            return false;
+        }
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            session.save(lop);
+            transaction.commit();
+        } catch (HibernateException ex) {
+            transaction.rollback();
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return true;
+    }
 }

@@ -13,7 +13,7 @@ import pojo.*;
  *
  * @author HP
  */
-public class Project_Hibernate {
+public class Main {
 
     /**
      * @param args the command line arguments
