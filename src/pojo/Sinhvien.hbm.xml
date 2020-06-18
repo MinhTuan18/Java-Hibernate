@@ -17,8 +17,8 @@
         <property name="cmnd" type="string">
             <column name="CMND" length="13" />
         </property>
-        <property name="malop" type="string">
-            <column name="Malop" length="10" />
-        </property>
+        <many-to-one class="pojo.Lop" name="lop" lazy="false" cascade="save-update">
+            <column length="10" name="Malop" not-null="true" />
+        </many-to-one>
     </class>
 </hibernate-mapping>

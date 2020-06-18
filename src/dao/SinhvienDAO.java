@@ -5,11 +5,16 @@
  */
 package dao;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojo.Lop;
 import pojo.Sinhvien;
 import util.HibernateUtil;
 
@@ -107,5 +112,29 @@ public class SinhvienDAO {
             session.close();
         }
         return true;
+    }
+    
+    public static List<Sinhvien> themSVTuFileCSV(String filename, String malop){
+        String delimiter = ",";
+        List<Sinhvien> ds = null;
+        try {
+            File file = new File(filename);
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String line = "";
+            String[] tempArr;
+            Lop lop = new Lop(malop);
+            while ((line = br.readLine()) != null) {
+                tempArr = line.split(delimiter);
+                String masv = tempArr[1];
+                String hoten = tempArr[2];
+                String gioitinh = tempArr[3];
+                String cmnd = tempArr[4];
+                Sinhvien sv = new Sinhvien(masv, hoten, gioitinh, cmnd, lop);
+                ds.add(sv);
+            }
+        } catch (IOException ex) {
+        }
+        return ds;
     }
 }

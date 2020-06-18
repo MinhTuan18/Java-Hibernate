@@ -13,58 +13,64 @@ public class Sinhvien  implements java.io.Serializable {
      private String hoten;
      private String gioitinh;
      private String cmnd;
-     private String malop;
+     private Lop lop;
 
     public Sinhvien() {
     }
 
-	
-    public Sinhvien(String masv) {
+    public Sinhvien(String masv, String hoten, String gioitinh, String cmnd, Lop lop) {
         this.masv = masv;
+        this.hoten = hoten;
+        this.gioitinh = gioitinh;
+        this.cmnd = cmnd;
+        this.lop = lop;
     }
-    public Sinhvien(String masv, String hoten, String gioitinh, String cmnd, String malop) {
-       this.masv = masv;
-       this.hoten = hoten;
-       this.gioitinh = gioitinh;
-       this.cmnd = cmnd;
-       this.malop = malop;
-    }
-   
+     
+     
     public String getMasv() {
-        return this.masv;
+        return masv;
     }
-    
+
+    public String getHoten() {
+        return hoten;
+    }
+
+    public String getGioitinh() {
+        return gioitinh;
+    }
+
+    public String getCmnd() {
+        return cmnd;
+    }
+
+    public Lop getLop() {
+        return lop;
+    }
+
     public void setMasv(String masv) {
         this.masv = masv;
     }
-    public String getHoten() {
-        return this.hoten;
-    }
-    
+
     public void setHoten(String hoten) {
         this.hoten = hoten;
     }
-    public String getGioitinh() {
-        return this.gioitinh;
-    }
-    
+
     public void setGioitinh(String gioitinh) {
         this.gioitinh = gioitinh;
     }
-    public String getCmnd() {
-        return this.cmnd;
-    }
-    
+
     public void setCmnd(String cmnd) {
         this.cmnd = cmnd;
     }
-    public String getMalop() {
-        return this.malop;
+
+    public void setLop(Lop lop) {
+        this.lop = lop;
     }
+
     
-    public void setMalop(String malop) {
-        this.malop = malop;
-    }
+
+	
+    
 
 
 

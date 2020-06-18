@@ -20,9 +20,13 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Lop lop = LopDAO.layThongTinLop("17CTT7");
-        if (lop != null) {
-            System.out.println(lop.getMalop());
-        }
+        Sinhvien sv = new Sinhvien();
+        sv.setMasv("1123345");
+        sv.setCmnd("123125413");
+        sv.setGioitinh("Nam");
+        sv.setHoten("A B C");
+        Lop lop = new Lop("17CTT2");
+        sv.setLop(lop);
+        boolean kq = SinhvienDAO.themSinhVien(sv);
     } 
 }

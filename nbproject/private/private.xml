@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/III/Java/Project_Hibernate/src/project_hibernate/NewJPanel.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/dao/SinhvienDAO.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/project_hibernate/NewJFrame.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/project_hibernate/LoginView.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/Sinhvien.hbm.xml</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/Sinhvien.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/dao/LopDAO.java</file>
             <file>file:/E:/III/Java/Project_Hibernate/src/project_hibernate/Main.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/dao/MonhocDAO.java</file>
         </group>
     </open-files>
 </project-private>
