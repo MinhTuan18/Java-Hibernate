@@ -8,6 +8,7 @@ package project_hibernate;
 import dao.*;
 import java.util.List;
 import pojo.*;
+import view.NewJFrame;
 
 /**
  *
@@ -20,13 +21,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Sinhvien sv = new Sinhvien();
-        sv.setMasv("1123345");
-        sv.setCmnd("123125413");
-        sv.setGioitinh("Nam");
-        sv.setHoten("A B C");
-        Lop lop = new Lop("17CTT2");
-        sv.setLop(lop);
-        boolean kq = SinhvienDAO.themSinhVien(sv);
+        
+        new NewJFrame().setVisible(true);
     } 
 }

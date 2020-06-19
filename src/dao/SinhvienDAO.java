@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -114,9 +115,9 @@ public class SinhvienDAO {
         return true;
     }
     
-    public static List<Sinhvien> themSVTuFileCSV(String filename, String malop){
+    public static boolean themSVTuFileCSV(String filename, String malop){
         String delimiter = ",";
-        List<Sinhvien> ds = null;
+        List<Sinhvien> ds = new ArrayList<Sinhvien>();
         try {
             File file = new File(filename);
             FileReader fr = new FileReader(file);
@@ -124,6 +125,7 @@ public class SinhvienDAO {
             String line = "";
             String[] tempArr;
             Lop lop = new Lop(malop);
+            br.readLine();
             while ((line = br.readLine()) != null) {
                 tempArr = line.split(delimiter);
                 String masv = tempArr[1];
@@ -131,10 +133,29 @@ public class SinhvienDAO {
                 String gioitinh = tempArr[3];
                 String cmnd = tempArr[4];
                 Sinhvien sv = new Sinhvien(masv, hoten, gioitinh, cmnd, lop);
+                System.out.println(sv.getMasv() + "-" + sv.getHoten() + "-" + sv.getGioitinh() + "-" + sv.getCmnd() + "-" + sv.getLop().getMalop());
                 ds.add(sv);
             }
         } catch (IOException ex) {
         }
-        return ds;
+        if (ds.isEmpty()) {
+            return false;
+        }
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+        try {
+            transaction = session.beginTransaction();
+            ds.stream().forEach((sv) -> {
+                session.save(sv);
+            });
+            transaction.commit();
+        } catch (HibernateException ex) {
+            //Log the exception
+            transaction.rollback();
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return true;
     }
 }
