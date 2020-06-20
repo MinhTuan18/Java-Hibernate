@@ -8,7 +8,7 @@ package project_hibernate;
 import dao.*;
 import java.util.List;
 import pojo.*;
-import view.NewJFrame;
+import view.MainJFrame;
 
 /**
  *
@@ -22,6 +22,8 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        new NewJFrame().setVisible(true);
+        new MainJFrame().setVisible(true);
+        
+     
     } 
 }

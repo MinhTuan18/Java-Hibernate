@@ -18,8 +18,8 @@ import util.HibernateUtil;
  * @author HP
  */
 public class LopDAO {
-    public static List<Lop> layDanhSachLop() {
-    List<Lop> ds = null;
+    public static List<String> layDanhSachLop() {
+    List<String> ds = null;
     Session session = HibernateUtil.getSessionFactory().openSession();
     try {
         String hql = "select malop from Lop";
