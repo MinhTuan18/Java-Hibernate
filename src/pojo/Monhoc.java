@@ -12,20 +12,21 @@ public class Monhoc  implements java.io.Serializable {
      private String mamon;
      private String tenmon;
      private String phong;
-     private String malop;
+     private Lop lop;
 
     public Monhoc() {
+        this.lop = new Lop();
     }
 
 	
     public Monhoc(String mamon) {
         this.mamon = mamon;
     }
-    public Monhoc(String mamon, String tenmon, String phong, String malop) {
+    public Monhoc(String mamon, String tenmon, String phong, Lop lop) {
        this.mamon = mamon;
        this.tenmon = tenmon;
        this.phong = phong;
-       this.malop = malop;
+       this.lop = lop;
     }
    
     public String getMamon() {
@@ -49,12 +50,12 @@ public class Monhoc  implements java.io.Serializable {
     public void setPhong(String phong) {
         this.phong = phong;
     }
-    public String getMalop() {
-        return this.malop;
+    public Lop getLop() {
+        return this.lop;
     }
     
-    public void setMalop(String malop) {
-        this.malop = malop;
+    public void setMalop(Lop lop) {
+        this.lop = lop;
     }
 
 

@@ -16,6 +16,7 @@ public class Sinhvien  implements java.io.Serializable {
      private Lop lop;
 
     public Sinhvien() {
+        this.lop = new Lop();
     }
 
     public Sinhvien(String masv, String hoten, String gioitinh, String cmnd, Lop lop) {

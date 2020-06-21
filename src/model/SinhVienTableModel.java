@@ -13,7 +13,7 @@ import pojo.Sinhvien;
  *
  * @author HP
  */
-public class ClassTableModel {
+public class SinhVienTableModel {
     public DefaultTableModel setTableSinhVien(List<Sinhvien> dsSV, String[] listCol) {
         DefaultTableModel dtm = new DefaultTableModel() {
             @Override

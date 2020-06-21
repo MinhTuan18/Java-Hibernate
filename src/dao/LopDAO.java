@@ -19,19 +19,19 @@ import util.HibernateUtil;
  */
 public class LopDAO {
     public static List<String> layDanhSachLop() {
-    List<String> ds = null;
-    Session session = HibernateUtil.getSessionFactory().openSession();
-    try {
-        String hql = "select malop from Lop";
-        Query query = session.createQuery(hql);
-        ds = query.list();
-    } catch (HibernateException ex) {
-        //Log the exception
-        System.err.println(ex);
-    } finally {
-        session.close();
-    }
-    return ds;
+        List<String> ds = null;
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            String hql = "select malop from Lop";
+            Query query = session.createQuery(hql);
+            ds = query.list();
+        } catch (HibernateException ex) {
+            //Log the exception
+            System.err.println(ex);
+        } finally {
+            session.close();
+        }
+        return ds;
     }
     
     public static Lop layThongTinLop(String malop) {

@@ -20,44 +20,47 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import model.ClassTableModel;
+import model.SinhVienTableModel;
 import pojo.Lop;
 import pojo.Sinhvien;
+import view.ImportSinhVienCSVJFrame;
+import view.ThemSVJFrame;
 
 /**
  *
  * @author HP
  */
-public class SinhvienController {
+public class SinhVienController {
     private JPanel viewPanel;
     private JTextField searchTF;
     private JComboBox lopCBB;
     private JButton addBtn;
+    private JButton importCSVBtn;
     
-    private ClassTableModel tableModel = null;
+    private SinhVienTableModel tableModel = null;
     
     private  String[] columns = {"STT", "MSSV", "Họ tên", "Giới tính",
         "CMND", "Lớp"};
 
     private TableRowSorter<TableModel> rowSorter = null;
-    
-    public SinhvienController(JPanel viewPanel, JTextField searchTF, JComboBox lopCBB, JButton addBtn) {
+
+    public SinhVienController(JPanel viewPanel, JTextField searchTF, JComboBox lopCBB, JButton addBtn, JButton importCSVBtn) {
         this.viewPanel = viewPanel;
         this.searchTF = searchTF;
         this.lopCBB = lopCBB;
         this.addBtn = addBtn;
-        this.tableModel = new ClassTableModel();
+        this.importCSVBtn = importCSVBtn;
+        this.tableModel = new SinhVienTableModel();
     }
+    
+    
 
-    public void bindingLopToComboBox() {
+    public void setDaTaToComboBox() {
         lopCBB.removeAllItems();
         List <String> dsLop = LopDAO.layDanhSachLop();
         for (int i = 0; i< dsLop.size(); i++ ) {
             lopCBB.addItem(dsLop.get(i));
         }
-
-        
-        
         lopCBB.setSelectedIndex(-1);
         
         
@@ -119,6 +122,14 @@ public class SinhvienController {
                     sv.setHoten((String) model.getValueAt(selectedRowIndex, 2));
                     sv.setGioitinh((String) model.getValueAt(selectedRowIndex, 3));
                     sv.setCmnd((String) model.getValueAt(selectedRowIndex, 4));
+                    Lop lop = new Lop((String) model.getValueAt(selectedRowIndex, 5));
+                    sv.setLop(lop);
+                    
+                    ThemSVJFrame frame = new ThemSVJFrame(sv, false);
+                    
+                    
+                    frame.setVisible(true);
+                    
                 }
                 
             }
@@ -142,5 +153,37 @@ public class SinhvienController {
         viewPanel.add(scroll);
         viewPanel.validate();
         viewPanel.repaint();
+    }
+    
+    public void setEvent() {
+        addBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new ThemSVJFrame(new Sinhvien(), true).setVisible(true);
+            }
+            @Override
+            public void mousePressed(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+            }
+}       );
+        importCSVBtn.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new ImportSinhVienCSVJFrame().setVisible(true);
+                
+            }
+        });
+        
     }
 }

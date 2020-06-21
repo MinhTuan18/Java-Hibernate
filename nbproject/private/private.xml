@@ -3,14 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/III/Java/Project_Hibernate/src/view/SinhvienPanel.java</file>
-            <file>file:/E:/III/Java/Project_Hibernate/src/view/MainJFrame.java</file>
-            <file>file:/E:/III/Java/Project_Hibernate/src/model/ClassTableModel.java</file>
-            <file>file:/E:/III/Java/Project_Hibernate/src/controller/ChuyenmanhinhController.java</file>
-            <file>file:/E:/III/Java/Project_Hibernate/src/controller/ThemSinhVienController.java</file>
-            <file>file:/E:/III/Java/Project_Hibernate/src/view/ThemSVJFrame.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/controller/SinhVienController.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/controller/MonHocController.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/Sinhvien.hbm.xml</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/Sinhvien.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/Monhoc.hbm.xml</file>
             <file>file:/E:/III/Java/Project_Hibernate/src/project_hibernate/Main.java</file>
-            <file>file:/E:/III/Java/Project_Hibernate/src/controller/SinhvienController.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/view/SinhvienPanel.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/Monhoc.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/controller/ImportSVCSVController.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/view/ImportMonHocCSVJFrame.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/dao/LopDAO.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/view/MonhocPanel.java</file>
+            <file>file:/E:/III/Java/Project_Hibernate/src/pojo/Lop.java</file>
         </group>
     </open-files>
 </project-private>
