@@ -10,6 +10,8 @@ import dao.MonhocDAO;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -59,9 +61,9 @@ public class MonHocController {
         table.setRowSorter(rowSorter);
         
         // design
-        table.getColumnModel().getColumn(1).setMaxWidth(80);
-        table.getColumnModel().getColumn(1).setMinWidth(80);
-        table.getColumnModel().getColumn(1).setPreferredWidth(30);
+        table.getColumnModel().getColumn(0).setMaxWidth(80);
+        table.getColumnModel().getColumn(0).setMinWidth(80);
+        table.getColumnModel().getColumn(0).setPreferredWidth(30);
         
         table.getTableHeader().setFont(new Font("Times New Roman", Font.BOLD, 14));
         table.getTableHeader().setPreferredSize(new Dimension(100, 50));
@@ -97,5 +99,17 @@ public class MonHocController {
             }
             
         });
+        lopCBB.setAutoscrolls(true);
+        lopCBB.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(lopCBB.getSelectedIndex() != -1) {
+                    String malop = lopCBB.getSelectedItem().toString();
+                    setDataToTable(malop);
+                }
+            }
+        });
+        
     }
 }

@@ -58,6 +58,10 @@ public class Monhoc  implements java.io.Serializable {
         this.lop = lop;
     }
 
+    public void setLop(Lop lop) {
+        this.lop = lop;
+    }
+
 
 
 

@@ -15,6 +15,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojo.Danhsachlop;
+import pojo.DanhsachlopId;
 import pojo.Lop;
 import pojo.Monhoc;
 import pojo.Sinhvien;
@@ -45,8 +47,9 @@ public class MonhocDAO {
         List<Monhoc> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "select * from Monhoc where malop = " + malop + "\"";
+            String hql = "select mh from Monhoc mh where mh.lop.malop = :malop";
             Query query = session.createQuery(hql);
+            query.setString("malop", malop);
             ds = query.list();
         } catch (HibernateException ex) {
             //Log the exception
@@ -57,9 +60,11 @@ public class MonhocDAO {
         return ds;
     }
     
-    public static boolean themSVTuFileCSV(String filename, String malop){
+    public static boolean themMonHocTuFileCSV(String filename, String malop){
         String delimiter = ",";
         List<Monhoc> ds = new ArrayList<Monhoc>();
+        List<Sinhvien> dsSV = new ArrayList<Sinhvien>();
+        List<Danhsachlop> dsLop = new ArrayList<Danhsachlop>();
         try {
             File file = new File(filename);
             FileReader fr = new FileReader(file);
@@ -67,6 +72,7 @@ public class MonhocDAO {
             String line = "";
             String[] tempArr;
             Lop lop = new Lop(malop);
+            dsSV = SinhvienDAO.layDanhSachSinhVien(malop);
             br.readLine();
             while ((line = br.readLine()) != null) {
                 tempArr = line.split(delimiter);
@@ -77,6 +83,10 @@ public class MonhocDAO {
                 Monhoc monhoc = new Monhoc(mamon, tenmon, phonghoc, lop);
                 System.out.println(monhoc.getMamon()+ "-" + monhoc.getTenmon() + "-" + monhoc.getPhong() + "-" +  monhoc.getLop().getMalop());
                 ds.add(monhoc);
+                for (int i = 0; i < dsSV.size(); i++) {
+                    Danhsachlop dsl = new Danhsachlop(new DanhsachlopId(mamon, dsSV.get(i).getMasv(), malop));
+                    dsLop.add(dsl);
+                }
             }
         } catch (IOException ex) {
         }
@@ -89,6 +99,9 @@ public class MonhocDAO {
             transaction = session.beginTransaction();
             ds.stream().forEach((sv) -> {
                 session.save(sv);
+            });
+            dsLop.stream().forEach((dsl) -> {
+                session.save(dsl);
             });
             transaction.commit();
         } catch (HibernateException ex) {

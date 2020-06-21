@@ -26,6 +26,7 @@ public class ChuyenmanhinhController {
     private SinhvienPanel svP;
     private HomePanel homeP;
     private MonhocPanel monhocP;
+    private BangdiemPanel bangdiemP;
     
     private List<Danhmuc> listItem = null;
     public ChuyenmanhinhController() {
@@ -36,6 +37,7 @@ public class ChuyenmanhinhController {
         homeP = new HomePanel();
         svP = new SinhvienPanel();
         monhocP = new MonhocPanel();
+        bangdiemP = new BangdiemPanel();
         
     }
     
@@ -88,6 +90,9 @@ public class ChuyenmanhinhController {
                     break;
                 case "Monhoc":
                     node = monhocP;
+                    break;
+                case "Bangdiem":
+                    node = bangdiemP;
                     break;
                 default:
                     break;

@@ -15,6 +15,9 @@
                 <column name="Mamon" length="10" />
             </key-property>
         </composite-id>
+        <property name="hoten" type="string">
+            <column name="Hoten" length="40" />
+        </property>
         <property name="giuaki" type="java.lang.Double">
             <column name="Giuaki" precision="22" scale="0" />
         </property>

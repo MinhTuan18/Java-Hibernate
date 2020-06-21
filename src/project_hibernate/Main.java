@@ -22,9 +22,9 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        //new MainJFrame().setVisible(true);
-        Sinhvien sv = SinhvienDAO.layThongTinSinhVien("1712870");
-        System.out.println(sv.getHoten());
+        new MainJFrame().setVisible(true);
+        
+        
         
      
     } 

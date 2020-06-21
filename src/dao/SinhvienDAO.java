@@ -40,6 +40,23 @@ public class SinhvienDAO {
     return ds;
     }
     
+    public static List<Sinhvien> layDanhSachSinhVien(String malop) {
+    List<Sinhvien> ds = null;
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    try {
+        String hql = "select sv from Sinhvien sv where sv.lop.malop=:ma";
+        Query query = session.createQuery(hql);
+        query.setString("ma", malop);
+        ds = query.list();
+    } catch (HibernateException ex) {
+        //Log the exception
+        System.err.println(ex);
+    } finally {
+        session.close();
+    }
+    return ds;
+    }
+    
     public static Sinhvien layThongTinSinhVien(String maSinhVien) {
         Sinhvien sv = null;
         Session session = HibernateUtil.getSessionFactory().openSession();

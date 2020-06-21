@@ -11,48 +11,42 @@ public class DanhsachlopId  implements java.io.Serializable {
 
      private String mamon;
      private String masv;
+     private String malop;
 
     public DanhsachlopId() {
     }
 
-    public DanhsachlopId(String mamon, String masv) {
-       this.mamon = mamon;
-       this.masv = masv;
+    public DanhsachlopId(String mamon, String masv, String malop) {
+        this.mamon = mamon;
+        this.masv = masv;
+        this.malop = malop;
     }
-   
+
     public String getMamon() {
-        return this.mamon;
+        return mamon;
     }
-    
+
     public void setMamon(String mamon) {
         this.mamon = mamon;
     }
+
     public String getMasv() {
-        return this.masv;
+        return masv;
     }
-    
+
     public void setMasv(String masv) {
         this.masv = masv;
     }
 
+    public String getMalop() {
+        return malop;
+    }
 
-   public boolean equals(Object other) {
-         if ( (this == other ) ) return true;
-		 if ( (other == null ) ) return false;
-		 if ( !(other instanceof DanhsachlopId) ) return false;
-		 DanhsachlopId castOther = ( DanhsachlopId ) other; 
-         
-		 return ( (this.getMamon()==castOther.getMamon()) || ( this.getMamon()!=null && castOther.getMamon()!=null && this.getMamon().equals(castOther.getMamon()) ) )
- && ( (this.getMasv()==castOther.getMasv()) || ( this.getMasv()!=null && castOther.getMasv()!=null && this.getMasv().equals(castOther.getMasv()) ) );
-   }
-   
-   public int hashCode() {
-         int result = 17;
-         
-         result = 37 * result + ( getMamon() == null ? 0 : this.getMamon().hashCode() );
-         result = 37 * result + ( getMasv() == null ? 0 : this.getMasv().hashCode() );
-         return result;
-   }   
+    public void setMalop(String malop) {
+        this.malop = malop;
+    }
+
+    
 
 
 }

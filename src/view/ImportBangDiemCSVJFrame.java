@@ -5,24 +5,24 @@
  */
 package view;
 
-import controller.ImportMonHocCSVController;
-import controller.ImportSVCSVController;
+import controller.ImportBangDiemCSVController;
+
 
 /**
  *
  * @author HP
  */
-public class ImportMonHocCSVJFrame extends javax.swing.JFrame {
+public class ImportBangDiemCSVJFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form ImportCSVJFrame
      */
-    public ImportMonHocCSVJFrame() {
+    public ImportBangDiemCSVJFrame() {
         initComponents();
         setResizable(false);
         setTitle("Thêm danh sách môn học");
         setLocationRelativeTo(null);
-        ImportMonHocCSVController controller = new ImportMonHocCSVController(filenameLB, openBtn, lopTF, tbLB, addBtn);
+        ImportBangDiemCSVController controller = new ImportBangDiemCSVController(filenameLB, openBtn, lopTF, tbLB, addBtn);
         controller.setEvent();
         
     }

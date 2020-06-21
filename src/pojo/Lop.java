@@ -15,9 +15,10 @@ public class Lop  implements java.io.Serializable {
     }
 
     public Lop(String malop) {
-       this.malop = malop;
+        this.malop = malop;
     }
-   
+
+    
     public String getMalop() {
         return this.malop;
     }

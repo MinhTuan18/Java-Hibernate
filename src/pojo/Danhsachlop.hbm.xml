@@ -11,6 +11,9 @@
             <key-property name="masv" type="string">
                 <column name="Masv" length="10" />
             </key-property>
+            <key-property name="malop" type="string">
+                <column name="Malop" length="10" />
+            </key-property>
         </composite-id>
     </class>
 </hibernate-mapping>
