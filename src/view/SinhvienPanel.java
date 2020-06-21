@@ -19,7 +19,7 @@ public class SinhvienPanel extends javax.swing.JPanel {
     public SinhvienPanel() {
         initComponents();
         SinhVienController controller = new SinhVienController(viewPanel, searchTF, lopCBB, addBtn, importCSVBtn);
-        controller.setDataToTable();
+        //controller.setDataToTable();
         controller.setDaTaToComboBox();
         controller.setEvent();
     }

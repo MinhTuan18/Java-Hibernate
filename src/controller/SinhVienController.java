@@ -8,6 +8,8 @@ package controller;
 import dao.LopDAO;
 import dao.SinhvienDAO;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -66,8 +68,8 @@ public class SinhVienController {
         
     }
 
-    public void setDataToTable() {
-        List<Sinhvien> dsSV = SinhvienDAO.layDanhSachSinhVien();
+    public void setDataToTable(String malop) {
+        List<Sinhvien> dsSV = SinhvienDAO.layDanhSachSinhVien(malop);
         DefaultTableModel model = tableModel.setTableSinhVien(dsSV, columns);
         JTable table = new JTable(model);
         
@@ -184,6 +186,16 @@ public class SinhVienController {
                 
             }
         });
-        
+        lopCBB.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(lopCBB.getSelectedIndex() != -1) {
+                    String malop = lopCBB.getSelectedItem().toString();
+                    System.out.printf(malop);
+                    setDataToTable(malop);
+                }
+            }
+        });
     }
 }

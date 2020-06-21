@@ -37,19 +37,22 @@ public class BangDiemController {
     private JComboBox lopCBB2;
    
     private JPanel viewPanel;
-    
+    private JLabel panel1;
+    private JLabel panel2;
     private BangDiemTableModel tableModel = null;
     
     private String[] columns = {"STT", "MSSV", "Họ tên", "Điểm GK", "Điểm CK", "Điểm khác", "Điểm tổng", "Kết quả"};
     
     private TableRowSorter<TableModel> rowSorter = null;
 
-    public BangDiemController(JButton importCSVBtn, JPanel jPanel1, JComboBox lopCBB1, JComboBox lopCBB2, JPanel viewPanel) {
+    public BangDiemController(JButton importCSVBtn, JPanel jPanel1, JComboBox lopCBB1, JComboBox lopCBB2, JPanel viewPanel, JLabel panel1, JLabel panel2) {
         this.importCSVBtn = importCSVBtn;
         this.jPanel1 = jPanel1;
         this.lopCBB1 = lopCBB1;
         this.lopCBB2 = lopCBB2;
         this.viewPanel = viewPanel;
+        this.panel1 = panel1;
+        this.panel2 = panel2;
         this.tableModel = new BangDiemTableModel();
     }
     
@@ -66,8 +69,14 @@ public class BangDiemController {
     
     public void setDataToTable(String malop, String mamon) {
         List<Bangdiem> bd = BangdiemDAO.layBangDiem(malop, mamon);
-        
-        
+        int dau = 0;
+        for (int i = 0; i < bd.size(); i++) {
+            if (bd.get(i).getDiemtong() >= 5) {
+                dau++;
+            }
+        }
+        panel1.setText("Đậu: " + dau);
+        panel1.setText("Rớt: " + (bd.size() - dau) );
         DefaultTableModel model = tableModel.setTableBangDiem(bd, columns);
         JTable table = new JTable(model);
         

@@ -19,7 +19,7 @@ public class BangdiemPanel extends javax.swing.JPanel {
      */
     public BangdiemPanel() {
         initComponents();
-        BangDiemController controller = new BangDiemController(importCSVBtn, jPanel1, lopCBB1, lopCBB2, viewPanel);
+        BangDiemController controller = new BangDiemController(importCSVBtn, jPanel1, lopCBB1, lopCBB2, viewPanel, jLabel1, jLabel2);
         controller.setDaTaToComboBox1();
         controller.setEvent();
     }

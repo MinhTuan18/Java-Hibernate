@@ -55,15 +55,13 @@ public class MainJFrame extends javax.swing.JFrame {
         monhocLabel = new javax.swing.JLabel();
         bangdiemPanel = new javax.swing.JPanel();
         bangdiemLabel = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         viewPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        menuPanel.setBackground(new java.awt.Color(153, 0, 153));
+        menuPanel.setBackground(new java.awt.Color(153, 153, 153));
 
-        jPanel9.setBackground(new java.awt.Color(153, 102, 255));
+        jPanel9.setBackground(new java.awt.Color(153, 153, 255));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -89,7 +87,6 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         homeLabel.setFont(new java.awt.Font("Times New Roman", 0, 17)); // NOI18N
-        homeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         homeLabel.setText("Home");
 
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
@@ -110,7 +107,6 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         sinhvienLabel.setFont(new java.awt.Font("Times New Roman", 0, 17)); // NOI18N
-        sinhvienLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         sinhvienLabel.setText("Quản lí sinh viên");
 
         javax.swing.GroupLayout sinhvienPanelLayout = new javax.swing.GroupLayout(sinhvienPanel);
@@ -131,7 +127,6 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         monhocLabel.setFont(new java.awt.Font("Times New Roman", 0, 17)); // NOI18N
-        monhocLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         monhocLabel.setText("Quản lí môn học");
 
         javax.swing.GroupLayout monhocPanelLayout = new javax.swing.GroupLayout(monhocPanel);
@@ -152,7 +147,6 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         bangdiemLabel.setFont(new java.awt.Font("Times New Roman", 0, 17)); // NOI18N
-        bangdiemLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         bangdiemLabel.setText("Quản lí điểm");
 
         javax.swing.GroupLayout bangdiemPanelLayout = new javax.swing.GroupLayout(bangdiemPanel);
@@ -172,27 +166,6 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(10, 10, 10))
         );
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 17)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
-        jLabel5.setText("Đơn phúc khảo");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
@@ -204,8 +177,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(homePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sinhvienPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(monhocPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(bangdiemPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bangdiemPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         menuPanelLayout.setVerticalGroup(
@@ -220,9 +192,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(monhocPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bangdiemPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
+                .addGap(0, 46, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout viewPanelLayout = new javax.swing.GroupLayout(viewPanel);
@@ -277,9 +247,7 @@ public class MainJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel bangdiemPanel;
     private javax.swing.JLabel homeLabel;
     private javax.swing.JPanel homePanel;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel monhocLabel;
